@@ -1,0 +1,31 @@
+# requirements.txt
+
+# Core ML libraries
+pandas
+numpy
+scikit-learn
+
+# Experiment tracking and model registry
+mlflow
+
+# Feature store
+feast
+
+# API framework
+fastapi
+uvicorn
+httpx
+
+# Data validation
+great-expectations
+
+# Monitoring
+evidently
+
+# Testing
+pytest
+pytest-cov
+
+# Utilities
+pyarrow
+pydantic
