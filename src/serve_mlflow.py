@@ -53,10 +53,10 @@ app = FastAPI(
 )
 
 class Transaction(BaseModel):
-    amount: float = Field(..., description="Transaction amount in dollars", example=150.00)
-    hour: int = Field(..., description="Hour of the day (0-23)", example=14)
-    day_of_week: int = Field(..., description="Day of week (0=Monday, 6=Sunday)", example=3)
-    merchant_category: str = Field(..., description="Type of merchant", example="online")
+    amount: float = Field(..., description="Transaction amount in dollars", examples=[150.00])
+    hour: int = Field(..., description="Hour of the day (0-23)", examples=[14])
+    day_of_week: int = Field(..., description="Day of week (0=Monday, 6=Sunday)", examples=[3])
+    merchant_category: str = Field(..., description="Type of merchant", examples=["online"])
 
 class PredictionResponse(BaseModel):
     is_fraud: bool
@@ -66,7 +66,7 @@ class PredictionResponse(BaseModel):
 @app.post("/predict", response_model=PredictionResponse)
 def predict(tx: Transaction):
     """Predict whether a transaction is fraudulent using the champion model."""
-    data = tx.dict()
+    data = tx.model_dump()
     
     try:
         data["merchant_encoded"] = encoder.transform([data["merchant_category"]])[0]
