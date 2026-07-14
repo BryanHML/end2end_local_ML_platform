@@ -1,0 +1,36 @@
+artifact_path: file:C:/Users/Bryan/end2end_local_ML_platform/mlruns/1/models/m-edc816feaf9d42ed97129081b8b75e50/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.7
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.14.0
+model_id: m-edc816feaf9d42ed97129081b8b75e50
+model_size_bytes: 3403019
+model_uuid: m-edc816feaf9d42ed97129081b8b75e50
+prompts: null
+run_id: cb41e7ff4a9b48fe95f3cc97fb1c5870
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "amount", "required": true}, {"type": "long",
+    "name": "hour", "required": true}, {"type": "long", "name": "day_of_week", "required":
+    true}, {"type": "long", "name": "merchant_encoded", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-07-14 06:35:31.317918'
