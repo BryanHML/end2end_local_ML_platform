@@ -43,7 +43,7 @@ def validate_transaction(data: Dict[str, Any]) -> Dict[str, Any]:
     elif amount <= 0:
         errors.append("amount must be positive")
     elif amount > 50000:
-        errors.append(f"amount exceeds maximum allowed value of \(50,000 (got \){amount:,.2f})")
+        errors.append(f"amount exceeds maximum allowed value of $50,000 (got ${amount:,.2f})")
     
     # ==========================================================================
     # Hour Validation
